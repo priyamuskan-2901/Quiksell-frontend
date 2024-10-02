@@ -1,6 +1,6 @@
 import React from "react";
 import "./Card.css";
-import {GoDotFill } from "react-icons/go";
+import { GoDotFill } from "react-icons/go";
 
 const getRandomColor = () => {
   const darkColors = ["#007BFF", "#6610F2", "#343A40", "#333333"];

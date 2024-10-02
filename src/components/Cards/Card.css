@@ -1,5 +1,5 @@
 .cardContainer{
-    height: 19vh;
+    height: auto;
     
     width: 100%;
     border: 1px solid rgb(214, 213, 213);
@@ -39,6 +39,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    flex-wrap: wrap;
 }
 
 .tags{
@@ -50,25 +51,55 @@
 }
 .para{
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Chrome, Safari, and Opera */
-    -webkit-box-orient: vertical;
-    
-    display: -moz-box; /* Older Firefox */
-    -moz-box-orient: vertical; /* Older Firefox */
-    
-    display: box; /* Generic box model for non-webkit browsers */
-    box-orient: vertical; /* Firefox, Edge */
-    
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-height: 3em;
-    width: 85%;
-    white-space: normal;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3em;
+  width: 85%;
+  white-space: normal;
 }
 
-/* 
-@media (min-width: 768px) and (max-width: 1023px) {
-    .cardContainer{
-      height: 19vh;
+/* Responsive Design */
+
+/* Mobile devices */
+@media (max-width: 767px) {
+    .cardContainer {
+        padding: 8px;
+        margin: 10px 0; /* Allow space between cards */
+        box-shadow: none; /* Remove shadow for better mobile performance */
+        height: auto;
     }
-  } */
+
+    .tags {
+        font-size: 14px; /* Smaller tags for mobile */
+    }
+
+    .para {
+        -webkit-line-clamp: 3; /* Show more lines of text on mobile */
+        width: 100%;
+    }
+}
+
+/* Tablet devices */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .cardContainer {
+        height: 21vh; /* Increase height slightly for tablets */
+    }
+
+    .para {
+        -webkit-line-clamp: 2;
+        width: 85%;
+    }
+}
+
+/* Desktop devices */
+@media (min-width: 1024px) {
+    .cardContainer {
+        height: 19vh; /* Original height for desktop */
+    }
+
+    .para {
+        width: 85%;
+    }
+}
